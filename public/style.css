@@ -60,11 +60,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    /* Added padding so panel won't stick to the edges on mobile */
+    padding: 20px 20px 80px 20px;
+    /* Added extra bottom padding for the footer */
     background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
     overflow-x: hidden;
-    /* Only hide horizontal overflow, allow vertical scrolling if needed */
     position: relative;
     color: var(--text-primary);
 }
@@ -509,15 +508,16 @@ header {
 
 /* GitHub Style Footer */
 .site-footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 24px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: center;
     background: transparent;
-    z-index: 10;
+    z-index: 50;
+    /* Ensuring it's above everything else */
 }
 
 .footer-content {
