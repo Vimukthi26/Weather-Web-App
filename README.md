@@ -28,7 +28,7 @@ CSS3 – Styling and responsive design
 
 JavaScript (Vanilla JS) – Application logic
 
-Weather API – Fetch real-time weather data
+Weather API – Open-Meteo API (https://api.open-meteo.com/v1/forecast?latitude)
 
 📂 Project Structure
 Weather-Web-App
