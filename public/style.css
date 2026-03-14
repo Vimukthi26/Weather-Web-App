@@ -1,45 +1,49 @@
 :root {
-    /* Light Mode Variables */
-    --bg-gradient-start: #e0c3fc;
-    --bg-gradient-end: #8ec5fc;
-    --glass-bg: rgba(255, 255, 255, 0.25);
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --glass-shadow: rgba(31, 38, 135, 0.15);
-    --text-primary: #2d3748;
-    --text-secondary: #4a5568;
-    --input-bg: rgba(255, 255, 255, 0.5);
-    --btn-bg: #667eea;
-    --btn-hover: #5a67d8;
-    --circle-1: #ff9a9e;
-    --circle-2: #a18cd1;
-    --circle-3: #84fab0;
-    --card-bg: rgba(255, 255, 255, 0.2);
+    /* Premium Light Mode */
+    --bg-gradient-start: #e0eafc;
+    --bg-gradient-end: #cfdef3;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --input-bg: rgba(255, 255, 255, 0.7);
+    --btn-bg: linear-gradient(135deg, #4f46e5, #3b82f6);
+    --btn-shadow: rgba(79, 70, 229, 0.4);
+    --circle-1: #4f46e5;
+    --circle-2: #06b6d4;
+    --circle-3: #ec4899;
+    --card-bg: rgba(255, 255, 255, 0.5);
+    --card-border: rgba(255, 255, 255, 0.7);
+    --icon-color: #3b82f6;
 }
 
 [data-theme="dark"] {
-    /* Dark Mode Variables */
-    --bg-gradient-start: #0f2027;
-    --bg-gradient-end: #203a43;
-    --glass-bg: rgba(16, 24, 39, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: rgba(0, 0, 0, 0.3);
-    --text-primary: #f7fafc;
-    --text-secondary: #e2e8f0;
-    --input-bg: rgba(255, 255, 255, 0.1);
-    --btn-bg: #4c1d95;
-    --btn-hover: #5b21b6;
-    --circle-1: #4c1d95;
-    --circle-2: #1e3a8a;
-    --circle-3: #0f766e;
-    --card-bg: rgba(0, 0, 0, 0.2);
+    /* Premium Dark Mode */
+    --bg-gradient-start: #0f172a;
+    --bg-gradient-end: #1e1b4b;
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: rgba(0, 0, 0, 0.5);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --input-bg: rgba(30, 41, 59, 0.7);
+    --btn-bg: linear-gradient(135deg, #818cf8, #6366f1);
+    --btn-shadow: rgba(99, 102, 241, 0.4);
+    --circle-1: #6366f1;
+    --circle-2: #a855f7;
+    --circle-3: #ec4899;
+    --card-bg: rgba(30, 41, 59, 0.5);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --icon-color: #818cf8;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 body {
@@ -53,7 +57,7 @@ body {
     color: var(--text-primary);
 }
 
-/* Background animated circles */
+/* Stunning Animated Background Blobs */
 .background-animation {
     position: absolute;
     top: 0;
@@ -62,62 +66,69 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    filter: blur(100px);
 }
 
 .circle {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    animation: float 10s infinite alternate ease-in-out;
+    opacity: 0.6;
+    animation: drift 15s infinite alternate cubic-bezier(0.5, 0.05, 1, 0.5);
 }
 
 .circle-1 {
-    width: 300px;
-    height: 300px;
+    width: 40vw;
+    height: 40vw;
     background: var(--circle-1);
-    top: -50px;
-    left: -50px;
-    animation-delay: 0s;
+    top: -10%;
+    left: -10%;
 }
 
 .circle-2 {
-    width: 400px;
-    height: 400px;
+    width: 50vw;
+    height: 50vw;
     background: var(--circle-2);
-    bottom: -100px;
-    right: -100px;
-    animation-delay: -3s;
+    bottom: -20%;
+    right: -10%;
+    animation-duration: 20s;
+    animation-delay: -5s;
 }
 
 .circle-3 {
-    width: 250px;
-    height: 250px;
+    width: 35vw;
+    height: 35vw;
     background: var(--circle-3);
     top: 40%;
-    left: 60%;
-    animation-delay: -6s;
+    left: 40%;
+    animation-duration: 18s;
+    animation-delay: -10s;
 }
 
-@keyframes float {
-    0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(-50px) scale(1.1); }
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(15%, 15%) scale(1.1);
+    }
 }
 
-/* Main Container - Glassmorphism */
+/* Premium Glass Container */
 .glass-panel {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    box-shadow: 0 8px 32px 0 var(--glass-shadow);
-    padding: 30px;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px var(--glass-shadow);
+    padding: 40px;
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     z-index: 10;
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
-    animation: slideUp 0.6s ease forwards;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes slideUp {
@@ -127,122 +138,140 @@ body {
     }
 }
 
-/* Header */
+/* Header Elements */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .logo i {
-    font-size: 1.5rem;
-    color: var(--text-primary);
+    font-size: 1.8rem;
+    background: var(--btn-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .logo h1 {
-    font-weight: 700;
-    font-size: 1.4rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
 }
 
 .theme-toggle {
     cursor: pointer;
     background: var(--input-bg);
+    border: 1px solid var(--glass-border);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px var(--glass-shadow);
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+    color: var(--text-primary);
 }
 
 .theme-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(15deg);
+    background: var(--card-bg);
 }
 
-/* Search Box */
+/* Premium Search Box */
 .search-box {
     display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 30px;
 }
 
 .search-box input {
     flex: 1;
-    padding: 12px 20px;
-    border: none;
-    outline: none;
-    border-radius: 12px;
+    padding: 16px 24px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
     background: var(--input-bg);
     color: var(--text-primary);
-    font-size: 1rem;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px transparent;
 }
 
 .search-box input::placeholder {
     color: var(--text-secondary);
+    opacity: 0.7;
 }
 
 .search-box input:focus {
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 0 0 2px var(--btn-bg);
+    outline: none;
+    background: var(--glass-bg);
+    border-color: var(--icon-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
 }
 
 .search-box button {
     background: var(--btn-bg);
     color: white;
     border: none;
-    border-radius: 12px;
-    width: 45px;
+    border-radius: 16px;
+    width: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 16px -4px var(--btn-shadow);
 }
 
 .search-box button:hover {
-    background: var(--btn-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -4px var(--btn-shadow);
 }
 
 .search-box button:active {
-    transform: translateY(0);
+    transform: translateY(1px);
 }
 
-/* Error Message */
+/* Warnings */
 .error-message {
-    background: rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.1);
     color: #ef4444;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 12px;
     text-align: center;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 20px;
     display: none;
+    animation: fadeIn 0.4s ease;
 }
 
-/* Weather Content */
+/* Core Weather Display */
 .current-weather {
     text-align: center;
-    margin-bottom: 30px;
-    animation: fadeIn 0.5s ease;
+    margin-bottom: 35px;
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .city-name {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
     margin-bottom: 5px;
 }
 
@@ -250,101 +279,142 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .weather-icon {
-    font-size: 5rem;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 6rem;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
     margin-bottom: 10px;
 }
 
 .icon-pulse {
-    animation: pulse 2s infinite;
+    animation: pulseIcon 3s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+@keyframes pulseIcon {
+
+    0%,
+    100% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.05) translateY(-5px);
+    }
 }
 
 .temp-box h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
+    font-size: 5rem;
+    font-weight: 800;
     line-height: 1;
+    letter-spacing: -2px;
     background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .condition {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
-    margin-top: 5px;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
 }
 
-/* Weather Details */
+/* Weather Stats Cards */
 .weather-details {
     display: flex;
     gap: 15px;
     background: var(--card-bg);
-    border-radius: 16px;
-    padding: 15px;
-    animation: slideUp 0.6s ease 0.2s forwards;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 20px;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
     opacity: 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.weather-details:hover {
+    transform: translateY(-5px);
+    background: var(--input-bg);
 }
 
 .detail-card {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .detail-card i {
-    font-size: 1.8rem;
-    color: var(--btn-bg);
+    font-size: 2rem;
+    color: var(--icon-color);
 }
 
 .label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-bottom: 2px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .value {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 700;
     color: var(--text-primary);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* Loader */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Elegant Premium Loader */
 .loader {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 250px;
 }
 
 .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid var(--glass-border);
-    border-top: 4px solid var(--btn-bg);
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--card-border);
+    border-top: 4px solid var(--icon-color);
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
