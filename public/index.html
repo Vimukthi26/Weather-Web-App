@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWizz - Modern Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <div class="container glass-panel">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h1>WeatherWizz</h1>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Search for a city...">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            
+            <div class="error-message" id="error-message">
+                City not found. Please try again.
+            </div>
+
+            <div class="weather-content" id="weather-content" style="display: none;">
+                <div class="current-weather">
+                    <h2 class="city-name" id="city-name">London, UK</h2>
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weather-icon">
+                            <i class="fa-solid fa-sun icon-pulse"></i>
+                        </div>
+                        <div class="temp-box">
+                            <h1 id="temperature">24°</h1>
+                            <p class="condition" id="description">Sunny</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details glass-sub-panel">
+                    <div class="detail-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div>
+                            <p class="label">Humidity</p>
+                            <p class="value" id="humidity">65%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <div>
+                            <p class="label">Wind Speed</p>
+                            <p class="value" id="wind-speed">12 km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loader" id="loader" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
