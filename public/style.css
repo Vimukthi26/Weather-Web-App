@@ -60,8 +60,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    /* Added padding so panel won't stick to the edges on mobile */
     background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-    overflow: hidden;
+    overflow-x: hidden;
+    /* Only hide horizontal overflow, allow vertical scrolling if needed */
     position: relative;
     color: var(--text-primary);
 }
@@ -131,9 +134,13 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 32px;
     box-shadow: 0 25px 50px -12px var(--glass-shadow);
-    padding: 40px;
-    width: 90%;
-    max-width: 420px;
+    padding: 30px 35px;
+    /* Reduced vertical padding, kept horizontal slightly wide */
+    width: 100%;
+    max-width: 480px;
+    /* Made the panel wider as requested */
+    margin: auto;
+    /* Ensure it stays visible */
     z-index: 10;
     transform: translateY(30px);
     opacity: 0;
@@ -273,7 +280,8 @@ header {
 /* Core Weather Display */
 .current-weather {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    /* Reduced to bring bottom items up */
     animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -288,8 +296,10 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    margin-top: 25px;
+    gap: 10px;
+    /* Reduced gap */
+    margin-top: 15px;
+    /* Reduced margin */
 }
 
 .weather-icon {
