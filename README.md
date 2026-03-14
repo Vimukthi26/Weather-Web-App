@@ -85,8 +85,15 @@ Add dark mode
 👨‍💻 Author
 
 Chamodh Vimukthi
+
 Networking & Mobile Computing Undergraduate
+
 Horizon Campus – Sri Lanka
 
 GitHub:
 https://github.com/Vimukthi26
+
+Email: 
+chamodhvimukthi@gmail.com
+
+
