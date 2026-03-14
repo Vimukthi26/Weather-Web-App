@@ -1,41 +1,41 @@
 :root {
-    /* Premium Light Mode */
-    --bg-gradient-start: #e0eafc;
-    --bg-gradient-end: #cfdef3;
+    /* Premium Light Mode (Teal/Ocean) */
+    --bg-gradient-start: #e0f2fe;
+    --bg-gradient-end: #bae6fd;
     --glass-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.8);
     --glass-shadow: rgba(0, 0, 0, 0.1);
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --input-bg: rgba(255, 255, 255, 0.7);
-    --btn-bg: linear-gradient(135deg, #4f46e5, #3b82f6);
-    --btn-shadow: rgba(79, 70, 229, 0.4);
-    --circle-1: #4f46e5;
-    --circle-2: #06b6d4;
-    --circle-3: #ec4899;
+    --btn-bg: linear-gradient(135deg, #0284c7, #0369a1);
+    --btn-shadow: rgba(2, 132, 199, 0.4);
+    --circle-1: #38bdf8;
+    --circle-2: #22d3ee;
+    --circle-3: #818cf8;
     --card-bg: rgba(255, 255, 255, 0.5);
     --card-border: rgba(255, 255, 255, 0.7);
-    --icon-color: #3b82f6;
+    --icon-color: #0284c7;
 }
 
 [data-theme="dark"] {
-    /* Premium Dark Mode */
-    --bg-gradient-start: #0f172a;
-    --bg-gradient-end: #1e1b4b;
+    /* Premium Dark Mode (Deep Ocean/Midnight) */
+    --bg-gradient-start: #082f49;
+    --bg-gradient-end: #0f172a;
     --glass-bg: rgba(15, 23, 42, 0.65);
     --glass-border: rgba(255, 255, 255, 0.15);
     --glass-shadow: rgba(0, 0, 0, 0.5);
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --input-bg: rgba(30, 41, 59, 0.7);
-    --btn-bg: linear-gradient(135deg, #818cf8, #6366f1);
-    --btn-shadow: rgba(99, 102, 241, 0.4);
-    --circle-1: #6366f1;
-    --circle-2: #a855f7;
-    --circle-3: #ec4899;
+    --btn-bg: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    --btn-shadow: rgba(14, 165, 233, 0.4);
+    --circle-1: #0ea5e9;
+    --circle-2: #3b82f6;
+    --circle-3: #6366f1;
     --card-bg: rgba(30, 41, 59, 0.5);
     --card-border: rgba(255, 255, 255, 0.1);
-    --icon-color: #818cf8;
+    --icon-color: #38bdf8;
 }
 
 * {
