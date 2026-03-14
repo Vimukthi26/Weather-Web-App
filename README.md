@@ -33,15 +33,16 @@ Weather API – Open-Meteo API (https://api.open-meteo.com/v1/forecast?latitude)
 📂 Project Structure
 
 Weather-Web-App
+
 │
 
-├── index.html                         # Main webpage
+├── index.html                                                  # Main webpage
 
-├── style.css                          # Styling file
+├── style.css                                                   # Styling file
 
-├── script.js                          # JavaScript functionality
+├── script.js                                                   # JavaScript functionality
 
-└── README.md                          # Project documentation
+└── README.md                                                   # Project documentation
 
 
 ⚙️ Installation & Setup
