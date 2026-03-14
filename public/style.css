@@ -518,7 +518,18 @@ header {
     background: transparent;
     z-index: 50;
     /* Ensuring it's above everything else */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.site-footer.footer-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .footer-content {
     display: flex;

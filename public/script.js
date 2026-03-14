@@ -32,6 +32,8 @@ const description = document.getElementById('description');
 const humidity = document.getElementById('humidity');
 const windSpeed = document.getElementById('wind-speed');
 const weatherIcon = document.getElementById('weather-icon');
+const footer = document.querySelector('.site-footer');
+
 
 // Replace with backend URL when deployed, otherwise relative path
 const BASE_URL = '/api';
@@ -125,4 +127,22 @@ cityInput.addEventListener('keypress', (e) => {
 // Load default city (Colombo)
 window.addEventListener('DOMContentLoaded', () => {
     fetchWeather('Colombo');
+    handleFooterVisibility();
 });
+
+// Footer Visibility Logic
+function handleFooterVisibility() {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    // Show footer if user is near the bottom (last 50px) or if there's no scrollbar
+    if (scrollHeight - clientHeight - scrollTop <= 50 || scrollHeight <= clientHeight) {
+        footer.classList.add('footer-visible');
+    } else {
+        footer.classList.remove('footer-visible');
+    }
+}
+
+window.addEventListener('scroll', handleFooterVisibility);
+window.addEventListener('resize', handleFooterVisibility);
