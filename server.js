@@ -20,7 +20,7 @@ app.get('/api/weather', async (req, res) => {
 
         // Using Open-Meteo API
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m`;
-        
+
         const response = await axios.get(url);
         res.json(response.data);
     } catch (error) {
@@ -33,13 +33,13 @@ app.get('/api/weather', async (req, res) => {
 app.get('/api/geocode', async (req, res) => {
     try {
         const { city } = req.query;
-        
+
         if (!city) {
             return res.status(400).json({ error: 'City name is required' });
         }
 
         const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`;
-        
+
         const response = await axios.get(url);
         if (response.data.results && response.data.results.length > 0) {
             res.json(response.data.results[0]);
@@ -55,3 +55,5 @@ app.get('/api/geocode', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
