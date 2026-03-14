@@ -126,6 +126,75 @@ body {
     }
 }
 
+/* Live Floating Clouds */
+.cloud {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.4);
+    /* subtle white clouds */
+    font-size: 8rem;
+    z-index: 1;
+    /* under the glass-panel but over the gradient */
+    opacity: 0.5;
+    animation: floatCloud linear infinite;
+}
+
+[data-theme="dark"] .cloud {
+    color: rgba(0, 0, 0, 0.2);
+    /* darker clouds for dark mode */
+}
+
+/* Different settings for different clouds */
+.cloud-1 {
+    top: 15%;
+    animation-duration: 40s;
+    font-size: 10rem;
+}
+
+.cloud-2 {
+    top: 40%;
+    animation-duration: 60s;
+    font-size: 15rem;
+    transform: scale(0.8);
+    animation-delay: -20s;
+}
+
+.cloud-3 {
+    top: 70%;
+    animation-duration: 45s;
+    font-size: 8rem;
+    animation-delay: -10s;
+}
+
+.cloud-4 {
+    top: 5%;
+    animation-duration: 35s;
+    font-size: 6rem;
+    animation-delay: -5s;
+}
+
+.cloud-5 {
+    top: 85%;
+    animation-duration: 55s;
+    font-size: 12rem;
+    animation-delay: -30s;
+}
+
+@keyframes floatCloud {
+    0% {
+        right: -30%;
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.1) translateY(-10px);
+    }
+
+    100% {
+        right: 120%;
+        transform: scale(1) translateY(0);
+    }
+}
+
 /* Premium Glass Container */
 .glass-panel {
     background: var(--glass-bg);
