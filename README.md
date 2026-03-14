@@ -34,9 +34,13 @@ Weather API – Open-Meteo API (https://api.open-meteo.com/v1/forecast?latitude)
 
 Weather-Web-App
 │
+
 ├── index.html                         # Main webpage
+
 ├── style.css                          # Styling file
+
 ├── script.js                          # JavaScript functionality
+
 └── README.md                          # Project documentation
 
 
