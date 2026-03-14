@@ -43,7 +43,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+body,
+.glass-panel,
+.theme-toggle,
+input,
+button,
+.weather-details,
+.detail-card {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.4s;
 }
 
 body {
