@@ -11,8 +11,8 @@ router.get('/weather', async (req, res) => {
             return res.status(400).json({ error: 'Latitude and Longitude are required' });
         }
 
-        // Using Open-Meteo API
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m`;
+        // Using Open-Meteo API with current parameters to get humidity
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code`;
 
         const response = await axios.get(url);
         res.json(response.data);

@@ -23,7 +23,6 @@ const searchBtn = document.getElementById('search-btn');
 const cityInput = document.getElementById('city-input');
 const weatherContent = document.getElementById('weather-content');
 const loader = document.getElementById('loader');
-const errorMessage = document.getElementById('errorMessage'); // corrected to error-message
 const errMsg = document.getElementById('error-message');
 
 const cityName = document.getElementById('city-name');
@@ -74,7 +73,7 @@ async function fetchWeather(city) {
         }
 
         const weatherData = await weatherRes.json();
-        const current = weatherData.current_weather;
+        const current = weatherData.current; // OpenMeteo 'current' object
 
         // Add artificial delay for smooth transition and loader visibility
         setTimeout(() => {
@@ -93,16 +92,11 @@ async function fetchWeather(city) {
 
 function updateUI(name, country, current) {
     cityName.textContent = `${name}, ${country}`;
-    temperature.textContent = `${Math.round(current.temperature)}°`;
-    windSpeed.textContent = `${current.windspeed} km/h`;
+    temperature.textContent = `${Math.round(current.temperature_2m || current.temperature)}°`;
+    windSpeed.textContent = `${current.wind_speed_10m || current.windspeed} km/h`;
+    humidity.textContent = `${current.relative_humidity_2m || 0}%`;
 
-    // We don't get humidity from current_weather directly in OpenMeteo standard call 
-    // without specifying it in hourly and picking the first, so we'll mock it or use 
-    // random relative to temperature, but let's just use a static mock for now or remove it.
-    // For this example, let's generate a plausible random humidity between 40 - 80%
-    humidity.textContent = `${Math.floor(Math.random() * 40) + 40}%`;
-
-    const weatherInfo = getWeatherIconAndDesc(current.weathercode);
+    const weatherInfo = getWeatherIconAndDesc(current.weather_code !== undefined ? current.weather_code : current.weathercode);
     description.textContent = weatherInfo.desc;
     weatherIcon.innerHTML = weatherInfo.icon;
 }
