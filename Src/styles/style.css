@@ -45,6 +45,11 @@
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
 body,
 .glass-panel,
 .theme-toggle,

@@ -53,9 +53,9 @@ function getWeatherIconAndDesc(code) {
 // Fetch Weather Data
 async function fetchWeather(city) {
     try {
-        weatherContent.style.display = 'none';
-        errMsg.style.display = 'none';
-        loader.style.display = 'flex';
+        weatherContent.classList.add('hidden');
+        errMsg.classList.add('hidden');
+        loader.classList.remove('hidden');
 
         // 1. Get Coordinates from City Name
         const geoRes = await fetch(`${BASE_URL}/geocode?city=${city}`);
@@ -78,14 +78,14 @@ async function fetchWeather(city) {
         // Add artificial delay for smooth transition and loader visibility
         setTimeout(() => {
             updateUI(name, country, current);
-            loader.style.display = 'none';
-            weatherContent.style.display = 'block';
+            loader.classList.add('hidden');
+            weatherContent.classList.remove('hidden');
         }, 500);
 
     } catch (error) {
         console.error(error);
-        loader.style.display = 'none';
-        errMsg.style.display = 'block';
+        loader.classList.add('hidden');
+        errMsg.classList.remove('hidden');
         errMsg.textContent = error.message;
     }
 }

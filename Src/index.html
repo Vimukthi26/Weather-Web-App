@@ -38,14 +38,14 @@
         <main>
             <div class="search-box">
                 <input type="text" id="city-input" placeholder="Search for a city...">
-                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="search-btn" type="button" aria-label="Search weather"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <div class="error-message" id="error-message">
                 City not found. Please try again.
             </div>
 
-            <div class="weather-content" id="weather-content" style="display: none;">
+            <div class="weather-content hidden" id="weather-content">
                 <div class="current-weather">
                     <h2 class="city-name" id="city-name">London, UK</h2>
                     <div class="weather-main">
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="loader" id="loader" style="display: none;">
+            <div class="loader hidden" id="loader">
                 <div class="spinner"></div>
             </div>
         </main>
