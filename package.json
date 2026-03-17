@@ -2,9 +2,9 @@
   "name": "weather-web-app",
   "version": "1.0.0",
   "description": "A website that shows current weather information for a city.  Features:  Search city name  Display temperature, humidity, and weather condition",
-  "main": "server.js",
+  "main": "Src/scripts/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node Src/scripts/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

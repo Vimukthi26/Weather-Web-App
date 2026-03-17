@@ -7,7 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
-app.use(express.static('Src')); // Serve frontend files from Src folder
+const path = require('path');
+app.use(express.static(path.join(__dirname, '..'))); // Serve frontend files from Src folder (one level up from scripts)
 
 // Replace with your API route
 app.get('/api/weather', async (req, res) => {
